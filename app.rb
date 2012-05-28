@@ -3,6 +3,7 @@ require 'json'
 require 'scrapi'
 require 'net/http'
 require 'uri'
+require 'haml'
 
 def get_html_content(requested_url)
   url = URI.parse(requested_url)
@@ -42,4 +43,8 @@ get "/topic.json" do
   feeds.map do |feed|
     {:context => feed.context, :pic => feed.pic}
   end.to_json
+end
+
+get '/' do
+  haml :index
 end

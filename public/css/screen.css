@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 11, ../../sass/screen.scss */
+/* line 12, ../../sass/screen.scss */
 .clear:after {
   content: "";
   display: block;
@@ -75,82 +75,109 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   visibility: hidden;
 }
 
-/* line 18, ../../sass/screen.scss */
+/* line 19, ../../sass/screen.scss */
 body {
   background-color: #F6F6F4;
 }
 
-/* line 22, ../../sass/screen.scss */
+/* line 23, ../../sass/screen.scss */
 h1 {
-  background: url(images/header.jpg) repeat-x;
-  color: #FFCFDB;
+  background-color: #FFBBCF;
+  color: #A63D5B;
   text-align: center;
   font-size: 36px;
   font-weight: bold;
-  text-shadow: -2px -2px 2px #ca5977;
+  text-shadow: -2px -2px 2px #a63d5b;
   line-height: 80px;
 }
 
-/* line 32, ../../sass/screen.scss */
+/* line 33, ../../sass/screen.scss */
 .content {
-  background: url(images/content.jpg);
-  padding-bottom: 20px;
+  background: url(images/header.jpg) repeat-x;
+  padding-top: 15px;
   position: absolute;
   top: 80px;
   left: 0;
   right: 0;
   bottom: 80px;
-  min-height: 360px;
+  min-height: 400px;
 }
 
-/* line 43, ../../sass/screen.scss */
+/* line 44, ../../sass/screen.scss */
 .wall {
   height: 100%;
+  background: url(images/content.jpg);
 }
 
-/* line 47, ../../sass/screen.scss */
+/* line 49, ../../sass/screen.scss */
 .weibo {
   padding: 15px;
-  height: 30%;
-  color: #DE5385;
+  height: 20%;
+  color: black;
 }
 
-/* line 53, ../../sass/screen.scss */
+/* line 55, ../../sass/screen.scss */
 .weibo:nth-child(odd) {
-  box-shadow: 0 -8px 14px -6px #ca5977;
-}
-
-/* line 57, ../../sass/screen.scss */
-.weibo:nth-child(even) {
-  box-shadow: 0 2px 8px #CA5977 inset;
   background-color: #EC7A9B;
+  box-shadow: 0 10px 20px -10px #ca4a6d inset;
 }
 
-/* line 62, ../../sass/screen.scss */
+/* line 60, ../../sass/screen.scss */
+.weibo:first-child {
+  box-shadow: none;
+}
+
+/* line 64, ../../sass/screen.scss */
+.weibo:nth-child(even) {
+  box-shadow: 0 -10px 20px -10px #ca4a6d;
+}
+
+/* line 68, ../../sass/screen.scss */
 .context {
-  margin-left: 80px;
+  font-size: 24px;
+  color: #A63D5B;
+  margin-left: 120px;
+  padding: 10px;
+  background-color: #FFDAE4;
+  border-radius: 7px;
+  line-height: 30px;
+  position: relative;
 }
 
-/* line 66, ../../sass/screen.scss */
+/* line 79, ../../sass/screen.scss */
+.context:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 14px;
+  display: block;
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent #FFDAE4 transparent transparent;
+}
+
+/* line 90, ../../sass/screen.scss */
 .people {
   float: left;
   text-align: center;
+  width: 120px;
 }
 
-/* line 71, ../../sass/screen.scss */
+/* line 96, ../../sass/screen.scss */
 .avatar {
-  border: 4px solid #EE8DAE;
+  border: 2px solid white;
   border-radius: 4px;
   width: 64px;
-  box-shadow: 0 0 2px #91576C;
+  margin-bottom: 5px;
 }
 
-/* line 78, ../../sass/screen.scss */
+/* line 103, ../../sass/screen.scss */
 .name {
-  display: block;
+  margin-top: 5px;
+  color: black;
 }
 
-/* line 82, ../../sass/screen.scss */
+/* line 109, ../../sass/screen.scss */
 h2 {
   color: #675C53;
   font-size: 26px;

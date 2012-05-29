@@ -10,7 +10,7 @@ $(function() {
   };
 
   $.getJSON('/topic.json', function(data) {
-    data['feeds'] = data['feeds'].slice(0, 3);
+    data['feeds'] = data['feeds'].slice(0, 4);
     var context, name, seperatorIndex, feeds = data['feeds'];
     for (var index in feeds) {
       context = feeds[index]['context'];

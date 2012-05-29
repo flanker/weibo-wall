@@ -7,8 +7,15 @@
     %script{:src => '/js/index.js', :type => 'text/javascript'}
     %link{:href => "/css/screen.css", :rel =>"stylesheet", :type => "text/css", :media => "screen" }
   %body
-    %h1='Weibo Wall'
-    %ul.feeds
-      %li
-        %img{:src => ''}
-        %span.context
+    %article
+      %header
+        %h1='Words of Girls'
+      %section.content
+        %ul.wall
+          %li.clear.weibo
+            .people
+              %img.avatar{:src => ''}
+              %span.name
+            %p.context
+      %footer
+        %h2='Thoughtworks'

@@ -39,10 +39,10 @@ end
 enable :run
 
 get "/topic.json" do
-  feeds = get_feeds
-  feeds.map do |feed|
+  feeds = get_feeds.map do |feed|
     {:context => feed.context, :pic => feed.pic}
-  end.to_json
+  end
+  { :feeds => feeds }.to_json
 end
 
 get '/' do

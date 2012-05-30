@@ -1,9 +1,12 @@
+# encoding: utf-8
+
 require 'sinatra'
 require 'json'
 require 'scrapi'
 require 'net/http'
 require 'uri'
 require 'haml'
+require "cgi"
 
 def get_html_content(requested_url)
   url = URI.parse(requested_url)
@@ -17,7 +20,7 @@ def get_html_content(requested_url)
   return the_response.body
 end
 
-def get_feeds
+def get_feeds topic
   feed_scraper = Scraper.define do
     process ".liveStream_mainFeed_listContent_txt", :context => :text
     process ".liveStream_mainFeed_listPic img", :pic => '@src'
@@ -33,13 +36,15 @@ def get_feeds
     result :feeds
   end
 
-  feeds_scraper.scrape(get_html_content('http://widget.weibo.com/livestream/listlive.php?publish=0&talk=1&refer=1&titlebar=1&border=1&member=1&width=0&height=800&skin=8&colordiy=0&ptype=1&language=zh_cn&atopic=%E5%94%90%E5%B1%B14.8%E7%BA%A7%E5%9C%B0%E9%9C%87&ptopic=%E5%94%90%E5%B1%B14.8%E7%BA%A7%E5%9C%B0%E9%9C%87&at=1'))
+  url = "http://widget.weibo.com/livestream/listlive.php?pic=1&atopic=#{CGI::escape(topic)}"
+
+  feeds_scraper.scrape(get_html_content(url))
 end
 
 enable :run
 
-get "/topic.json" do
-  feeds = get_feeds.map do |feed|
+get "/topic.json/:topic" do
+  feeds = get_feeds(params[:topic]).map do |feed|
     {:context => feed.context, :pic => feed.pic.sub('/30/', '/180/')}
   end
   { :feeds => feeds }.to_json

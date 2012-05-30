@@ -22,10 +22,11 @@ end
 
 def get_feeds topic
   feed_scraper = Scraper.define do
-    process ".liveStream_mainFeed_listContent_txt", :context => :text
-    process ".liveStream_mainFeed_listPic img", :pic => '@src'
+    process '.liveStream_mainFeed_listContent_txt', :context => :text
+    process '.liveStream_mainFeed_listPic img', :avatar => '@src'
+    process '.liveStream_mainFeed_listContent_picshow a', :pic => '@href'
 
-    result :context, :pic
+    result :context, :avatar, :pic
   end
 
   feeds_scraper = Scraper.define do
@@ -45,7 +46,7 @@ enable :run
 
 get "/topic.json/:topic" do
   feeds = get_feeds(params[:topic]).map do |feed|
-    {:context => feed.context, :pic => feed.pic.sub('/30/', '/180/')}
+    {:context => feed.context, :avatar => feed.avatar.sub('/30/', '/180/'), :pic => feed.pic}
   end
   { :feeds => feeds }.to_json
 end

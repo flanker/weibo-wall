@@ -4,7 +4,7 @@ $(function() {
       'feed<-feeds': {
         '.name': 'feed.name',
         '.context': 'feed.context',
-        '.avatar@src': 'feed.pic'
+        '.avatar@src': 'feed.avatar'
       }
     }
   };

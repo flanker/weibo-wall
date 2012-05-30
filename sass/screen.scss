@@ -118,12 +118,13 @@ h1 {
 	margin-left: 10px;
 }
 
-h2 {
-	color: #675C53;
+.logo {
+	color: black;
 	line-height: $footer-height;
 	font-size: $footer-height;
-	font-weight: bold;
+	font-weight: normal;
 	text-align: right;
+	font-family: sans-serif;
 	text-shadow: -1px -1px 1px #675C53;
 	background: url(images/footer.jpg) repeat-x;
 	padding-right: 20px;
@@ -131,4 +132,8 @@ h2 {
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
+
+.logo em {
+	font-weight: bold;
 }

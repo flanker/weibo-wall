@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 12, ../../sass/screen.scss */
+/* line 13, ../../sass/screen.scss */
 .clear:after {
   content: "";
   display: block;
@@ -75,20 +75,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   visibility: hidden;
 }
 
-/* line 19, ../../sass/screen.scss */
+/* line 20, ../../sass/screen.scss */
 body {
   background-color: #F6F6F4;
 }
 
-/* line 23, ../../sass/screen.scss */
+/* line 24, ../../sass/screen.scss */
 h1 {
   background-color: #FFBBCF;
   color: #A63D5B;
   text-align: center;
-  font-size: 36px;
+  font-size: 4em;
   font-weight: bold;
   text-shadow: -2px -2px 2px #a63d5b;
-  line-height: 80px;
 }
 
 /* line 33, ../../sass/screen.scss */
@@ -96,10 +95,10 @@ h1 {
   background: url(images/header.jpg) repeat-x;
   padding-top: 15px;
   position: absolute;
-  top: 80px;
+  top: 4em;
   left: 0;
   right: 0;
-  bottom: 80px;
+  bottom: 2em;
   min-height: 400px;
 }
 
@@ -134,14 +133,14 @@ h1 {
 
 /* line 68, ../../sass/screen.scss */
 .context {
-  font-size: 24px;
+  font-size: 1.2em;
   color: #A63D5B;
-  margin-left: 120px;
   padding: 10px;
   background-color: #FFDAE4;
   border-radius: 7px;
   line-height: 30px;
   position: relative;
+  display: table-cell;
 }
 
 /* line 79, ../../sass/screen.scss */
@@ -177,15 +176,23 @@ h1 {
   color: black;
 }
 
-/* line 109, ../../sass/screen.scss */
+/* line 108, ../../sass/screen.scss */
+.picture {
+  height: 100%;
+  float: right;
+  border: 2px solid white;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+/* line 116, ../../sass/screen.scss */
 h2 {
   color: #675C53;
-  font-size: 26px;
+  font-size: 2em;
   font-weight: bold;
   text-align: right;
   text-shadow: -1px -1px 1px #675c53;
   background: url(images/footer.jpg) repeat-x;
-  line-height: 80px;
   padding-right: 20px;
   position: absolute;
   left: 0;

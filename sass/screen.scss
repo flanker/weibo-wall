@@ -5,9 +5,10 @@
 
 @import "compass/reset";
 
-$header-height: 80px;
-$footer-height: 80px;
+$header-height: 4em;
+$footer-height: 2em;
 $left-width: 120px;
+$right-width: 130px;
 
 .clear:after {
 	content: "";
@@ -24,10 +25,9 @@ h1 {
 	background-color: #FFBBCF;
 	color: #A63D5B;
 	text-align: center;
-	font-size: 36px;
+	font-size: $header-height;
 	font-weight: bold;
 	text-shadow: -2px -2px 2px #A63D5B;
-	line-height: $header-height;
 }
 
 .content {
@@ -66,14 +66,14 @@ h1 {
 }
 
 .context {
-	font-size: 24px;
+	font-size: 1.2em;
 	color: #A63D5B;
-	margin-left: $left-width;
 	padding: 10px;
 	background-color: #FFDAE4;
 	border-radius: 7px;
 	line-height: 30px;
 	position: relative;
+	display: table-cell;
 }
 
 .context:after {
@@ -102,18 +102,24 @@ h1 {
 
 .name {
 	margin-top: 5px;
-	// color: #992848;
 	color: black;
+}
+
+.picture {
+	height: 100%;
+	float: right;
+	border: 2px solid white;
+	border-radius: 4px;
+	margin-left: 10px;
 }
 
 h2 {
 	color: #675C53;
-	font-size: 26px;
+	font-size: $footer-height;
 	font-weight: bold;
 	text-align: right;
 	text-shadow: -1px -1px 1px #675C53;
 	background: url(images/footer.jpg) repeat-x;
-	line-height: $footer-height;
 	padding-right: 20px;
 	position: absolute;
 	left: 0;

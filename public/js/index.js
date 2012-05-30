@@ -9,7 +9,9 @@ $(function() {
     }
   };
 
-  $.getJSON('/topic.json/深圳5.26跑车车祸', function(data) {
+  var topic = window.location.hash === "" ? '深圳5.26跑车车祸' : window.location.hash.replace('#', '');
+
+  $.getJSON('/topic.json/' + topic, function(data) {
     data['feeds'] = data['feeds'].slice(0, 4);
     var context, name, seperatorIndex, feeds = data['feeds'];
     for (var index in feeds) {

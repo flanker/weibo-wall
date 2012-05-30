@@ -40,7 +40,7 @@ enable :run
 
 get "/topic.json" do
   feeds = get_feeds.map do |feed|
-    {:context => feed.context, :pic => feed.pic}
+    {:context => feed.context, :pic => feed.pic.sub('/30/', '/180/')}
   end
   { :feeds => feeds }.to_json
 end

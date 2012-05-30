@@ -11,22 +11,13 @@ $(function() {
   };
 
   var topic = window.location.hash === "" ? '深圳5.26跑车车祸' : window.location.hash.replace('#', '');
-  var timer = 2500;
+  var timer = 3000;
 
   function refreshData() {
     $.getJSON('/topic.json/' + topic, function(data) {
       weiboData = seperateNameContext(data)['feeds'];
       display();
     });
-  }
-
-  function resizeContext(weiboEl) {
-    if(weiboEl.find('.picture').attr('src')) {
-        weiboEl.find('.context').css('margin-right', weiboEl.find('.picture').width() + 20);
-      }
-      else {
-        weiboEl.find('.picture').remove();
-      }
   }
 
   function seperateNameContext(data) {
@@ -55,10 +46,17 @@ $(function() {
       }
       newHtml += '<p class="context">' + currentWeibo['context'] + '</p>';
       
-      var currentWeiboEl = $('.weibo:eq(' + currentPosition + ')').html(newHtml);
-
+      var currentWeiboEl = $('.weibo:eq(' + currentPosition + ') .wrapper');
+      var width = $(window).width();
+      currentWeiboEl.animate({
+        'left': width
+      }, function() {
+        currentWeiboEl.html(newHtml).css('left', width);
+        currentWeiboEl.animate({
+          'left': 0
+        });
+      });
       currentPosition = currentPosition > 2 ? 0 : currentPosition + 1;
-
       display();
     }, timer);
   }
@@ -67,11 +65,12 @@ $(function() {
   var currentPosition;
 
   $.getJSON('/topic.json/' + topic, function(data) {
+    data = seperateNameContext(data);
     weiboData = data['feeds'].slice(4, 10);
     currentPosition = 0;
     data['feeds'] = data['feeds'].slice(0, 4);
 
-    $('.wall').render(seperateNameContext(data), directive);
+    $('.wall').render(data, directive);
 
     display();
   });

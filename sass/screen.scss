@@ -48,8 +48,13 @@ h1 {
 
 .weibo {
 	padding: 15px;
+	padding-left: 0;
 	height: 20%;
 	color: black;
+}
+
+.wrapper {
+	position: relative;
 }
 
 .weibo:nth-child(odd) {
@@ -96,7 +101,7 @@ h1 {
 .avatar {
 	border: 2px solid white;
 	border-radius: 4px;
-	width: 64px;
+	width: 5em;
 	margin-bottom: 5px;
 }
 
@@ -115,6 +120,7 @@ h1 {
 
 h2 {
 	color: #675C53;
+	line-height: $footer-height;
 	font-size: $footer-height;
 	font-weight: bold;
 	text-align: right;

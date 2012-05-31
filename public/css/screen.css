@@ -100,15 +100,16 @@ h1 {
   right: 0;
   bottom: 2em;
   min-height: 400px;
+  overflow-x: hidden;
 }
 
-/* line 44, ../../sass/screen.scss */
+/* line 45, ../../sass/screen.scss */
 .wall {
   height: 100%;
   background: url(images/content.jpg);
 }
 
-/* line 49, ../../sass/screen.scss */
+/* line 50, ../../sass/screen.scss */
 .weibo {
   padding: 15px;
   padding-left: 0;
@@ -116,28 +117,28 @@ h1 {
   color: black;
 }
 
-/* line 56, ../../sass/screen.scss */
+/* line 57, ../../sass/screen.scss */
 .wrapper {
   position: relative;
 }
 
-/* line 60, ../../sass/screen.scss */
+/* line 61, ../../sass/screen.scss */
 .weibo:nth-child(odd) {
   background-color: #EC7A9B;
   box-shadow: 0 10px 20px -10px #ca4a6d inset;
 }
 
-/* line 65, ../../sass/screen.scss */
+/* line 66, ../../sass/screen.scss */
 .weibo:first-child {
   box-shadow: none;
 }
 
-/* line 69, ../../sass/screen.scss */
+/* line 70, ../../sass/screen.scss */
 .weibo:nth-child(even) {
   box-shadow: 0 -10px 20px -10px #ca4a6d;
 }
 
-/* line 73, ../../sass/screen.scss */
+/* line 74, ../../sass/screen.scss */
 .context {
   font-size: 1.2em;
   color: #A63D5B;
@@ -149,7 +150,7 @@ h1 {
   display: table-cell;
 }
 
-/* line 84, ../../sass/screen.scss */
+/* line 85, ../../sass/screen.scss */
 .context:after {
   content: "";
   position: absolute;
@@ -161,14 +162,14 @@ h1 {
   border-color: transparent #FFDAE4 transparent transparent;
 }
 
-/* line 95, ../../sass/screen.scss */
+/* line 96, ../../sass/screen.scss */
 .people {
   float: left;
   text-align: center;
   width: 120px;
 }
 
-/* line 101, ../../sass/screen.scss */
+/* line 102, ../../sass/screen.scss */
 .avatar {
   border: 2px solid white;
   border-radius: 4px;
@@ -176,13 +177,13 @@ h1 {
   margin-bottom: 5px;
 }
 
-/* line 108, ../../sass/screen.scss */
+/* line 109, ../../sass/screen.scss */
 .name {
   margin-top: 5px;
   color: black;
 }
 
-/* line 113, ../../sass/screen.scss */
+/* line 114, ../../sass/screen.scss */
 .picture {
   height: 100%;
   float: right;
@@ -191,7 +192,7 @@ h1 {
   margin-left: 10px;
 }
 
-/* line 121, ../../sass/screen.scss */
+/* line 122, ../../sass/screen.scss */
 .logo {
   color: black;
   line-height: 2em;
@@ -208,7 +209,7 @@ h1 {
   bottom: 0;
 }
 
-/* line 137, ../../sass/screen.scss */
+/* line 138, ../../sass/screen.scss */
 .logo em {
   font-weight: bold;
 }
